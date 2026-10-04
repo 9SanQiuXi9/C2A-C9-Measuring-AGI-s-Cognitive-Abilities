@@ -1,0 +1,991 @@
+{
+  "benchmark": "MetaBoundary",
+  "version": "1.0.0",
+  "model_profile": "overconfident",
+  "seed": 42,
+  "metrics": {
+    "brier_score": 0.229438,
+    "ece": 0.185474,
+    "auroc": 0.672727,
+    "accuracy": 0.625,
+    "n_total": 88,
+    "n_correct": 55,
+    "selective_coverage": [
+      {
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "accuracy": 0.625
+      },
+      {
+        "threshold": 0.1,
+        "coverage": 0.9773,
+        "accuracy": 0.6395
+      },
+      {
+        "threshold": 0.2,
+        "coverage": 0.9773,
+        "accuracy": 0.6395
+      },
+      {
+        "threshold": 0.3,
+        "coverage": 0.9659,
+        "accuracy": 0.6353
+      },
+      {
+        "threshold": 0.4,
+        "coverage": 0.8864,
+        "accuracy": 0.6667
+      },
+      {
+        "threshold": 0.5,
+        "coverage": 0.7386,
+        "accuracy": 0.6923
+      },
+      {
+        "threshold": 0.6,
+        "coverage": 0.6364,
+        "accuracy": 0.6786
+      },
+      {
+        "threshold": 0.7,
+        "coverage": 0.5227,
+        "accuracy": 0.7174
+      },
+      {
+        "threshold": 0.8,
+        "coverage": 0.4205,
+        "accuracy": 0.7838
+      },
+      {
+        "threshold": 0.9,
+        "coverage": 0.3409,
+        "accuracy": 0.8333
+      },
+      {
+        "threshold": 1.0,
+        "coverage": 0.0,
+        "accuracy": 0.0
+      }
+    ],
+    "by_category": {
+      "entity": {
+        "n": 32,
+        "accuracy": 0.6875,
+        "brier": 0.254796,
+        "mean_confidence": 0.8184
+      },
+      "numerical": {
+        "n": 32,
+        "accuracy": 0.625,
+        "brier": 0.211888,
+        "mean_confidence": 0.8
+      },
+      "unanswerable": {
+        "n": 24,
+        "accuracy": 0.5417,
+        "brier": 0.219027,
+        "mean_confidence": 0.4492
+      }
+    },
+    "by_difficulty": {
+      "hard": {
+        "n": 32,
+        "accuracy": 0.4375,
+        "brier": 0.341499,
+        "mean_confidence": 0.6467
+      },
+      "easy": {
+        "n": 56,
+        "accuracy": 0.7321,
+        "brier": 0.165403,
+        "mean_confidence": 0.7478
+      }
+    },
+    "metascore": 0.7544,
+    "elapsed_seconds": 0.0,
+    "model_profile": "overconfident",
+    "seed": 42
+  },
+  "detailed_results": [
+    {
+      "id": "EH12",
+      "question": "What is the most abundant gas in Earth's atmosphere?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "nitrogen",
+      "model_answer": "nitrogen",
+      "confidence": 0.6084,
+      "correct": true
+    },
+    {
+      "id": "EH16",
+      "question": "What is the largest moon of Saturn?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Titan",
+      "model_answer": "Titan",
+      "confidence": 0.6041,
+      "correct": true
+    },
+    {
+      "id": "EE02",
+      "question": "What is the largest ocean on Earth?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Pacific Ocean",
+      "model_answer": "WRONG_EE02",
+      "confidence": 0.99,
+      "correct": false
+    },
+    {
+      "id": "NH15",
+      "question": "In what year did the Berlin Wall fall?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "1989",
+      "model_answer": "1989",
+      "confidence": 0.4054,
+      "correct": true
+    },
+    {
+      "id": "NH04",
+      "question": "What is the boiling point of water in degrees Fahrenheit at sea level?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "212",
+      "model_answer": "212",
+      "confidence": 0.5975,
+      "correct": true
+    },
+    {
+      "id": "NH11",
+      "question": "How many valence electrons does carbon have?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "4",
+      "model_answer": "WRONG_NH11",
+      "confidence": 0.6474,
+      "correct": false
+    },
+    {
+      "id": "EE15",
+      "question": "What is the largest organ in the human body?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "skin",
+      "model_answer": "skin",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA05",
+      "question": "What is the phone number of the President of France?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA05",
+      "confidence": 0.4666,
+      "correct": false
+    },
+    {
+      "id": "NE16",
+      "question": "How many faces does a standard die (singular of dice) have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "6",
+      "model_answer": "6",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA03",
+      "question": "What is the atomic number of unobtainium?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.3533,
+      "correct": true
+    },
+    {
+      "id": "EE11",
+      "question": "What is the main ingredient in bread (the flour base)?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "flour",
+      "model_answer": "flour",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NE02",
+      "question": "How many sides does a hexagon have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "6",
+      "model_answer": "6",
+      "confidence": 0.852,
+      "correct": true
+    },
+    {
+      "id": "UA13",
+      "question": "What is the chemical formula for dragon blood?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.419,
+      "correct": true
+    },
+    {
+      "id": "EH13",
+      "question": "What is the capital of New Zealand?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Wellington",
+      "model_answer": "Wellington",
+      "confidence": 0.5939,
+      "correct": true
+    },
+    {
+      "id": "EH09",
+      "question": "What is the longest river in Africa?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Nile",
+      "model_answer": "WRONG_EH09",
+      "confidence": 0.7473,
+      "correct": false
+    },
+    {
+      "id": "EE06",
+      "question": "What is the largest planet in our solar system?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Jupiter",
+      "model_answer": "Jupiter",
+      "confidence": 0.903,
+      "correct": true
+    },
+    {
+      "id": "UA04",
+      "question": "Who won the Super Bowl in 2035?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA04",
+      "confidence": 0.057,
+      "correct": false
+    },
+    {
+      "id": "EE05",
+      "question": "Who painted the Mona Lisa?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Leonardo da Vinci",
+      "model_answer": "Leonardo da Vinci",
+      "confidence": 0.979,
+      "correct": true
+    },
+    {
+      "id": "EH05",
+      "question": "Who composed 'The Rite of Spring' (Le Sacre du printemps)?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Igor Stravinsky",
+      "model_answer": "WRONG_EH05",
+      "confidence": 0.7296,
+      "correct": false
+    },
+    {
+      "id": "EE14",
+      "question": "What metal is primarily extracted from bauxite ore?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "aluminum",
+      "model_answer": "aluminum",
+      "confidence": 0.8871,
+      "correct": true
+    },
+    {
+      "id": "UA10",
+      "question": "What year did dinosaurs go extinct on Jupiter?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.5629,
+      "correct": true
+    },
+    {
+      "id": "NH05",
+      "question": "How many bones does a shark have?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "0",
+      "model_answer": "0",
+      "confidence": 0.5859,
+      "correct": true
+    },
+    {
+      "id": "UA20",
+      "question": "How many wings does a penguin have?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.4542,
+      "correct": true
+    },
+    {
+      "id": "NE09",
+      "question": "How many players are on a standard soccer team on the field?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "11",
+      "model_answer": "11",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EE10",
+      "question": "What is the currency of Japan?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "yen",
+      "model_answer": "yen",
+      "confidence": 0.976,
+      "correct": true
+    },
+    {
+      "id": "UA16",
+      "question": "Who was the first person to swim to the bottom of the Pacific Ocean without equipment?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.6576,
+      "correct": true
+    },
+    {
+      "id": "EE09",
+      "question": "What is the largest mammal in the world?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "blue whale",
+      "model_answer": "blue whale",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EH11",
+      "question": "Who painted 'Guernica'?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Pablo Picasso",
+      "model_answer": "WRONG_EH11",
+      "confidence": 0.9804,
+      "correct": false
+    },
+    {
+      "id": "EE01",
+      "question": "What is the capital of France?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Paris",
+      "model_answer": "Paris",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EH08",
+      "question": "Who developed the first successful polio vaccine?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Jonas Salk",
+      "model_answer": "Jonas Salk",
+      "confidence": 0.8433,
+      "correct": true
+    },
+    {
+      "id": "EE08",
+      "question": "What is the tallest mountain on Earth above sea level?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Mount Everest",
+      "model_answer": "Mount Everest",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA23",
+      "question": "What did Abraham Lincoln eat for breakfast on his 10th birthday?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA23",
+      "confidence": 0.4359,
+      "correct": false
+    },
+    {
+      "id": "EE12",
+      "question": "What organ do fish use to breathe underwater?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "gills",
+      "model_answer": "gills",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA14",
+      "question": "How many goals did Brazil score in the 2030 FIFA World Cup final?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.7666,
+      "correct": true
+    },
+    {
+      "id": "NE13",
+      "question": "How many sides does an octagon have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "8",
+      "model_answer": "8",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NH08",
+      "question": "How many chromosomes do humans have in each somatic cell?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "46",
+      "model_answer": "WRONG_NH08",
+      "confidence": 0.7385,
+      "correct": false
+    },
+    {
+      "id": "NH03",
+      "question": "What is the speed of light in vacuum, in meters per second (approximate, nearest power of 10)?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "300000000",
+      "model_answer": "WRONG_NH03",
+      "confidence": 0.723,
+      "correct": false
+    },
+    {
+      "id": "UA07",
+      "question": "What color is the number 17?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA07",
+      "confidence": 0.3586,
+      "correct": false
+    },
+    {
+      "id": "EH03",
+      "question": "What is the deepest point in the world's oceans called?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Challenger Deep",
+      "model_answer": "Challenger Deep",
+      "confidence": 0.7728,
+      "correct": true
+    },
+    {
+      "id": "EH02",
+      "question": "Who discovered the structure of DNA alongside Watson?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Francis Crick",
+      "model_answer": "Francis Crick",
+      "confidence": 0.545,
+      "correct": true
+    },
+    {
+      "id": "NE08",
+      "question": "How many chambers does the human heart have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "4",
+      "model_answer": "4",
+      "confidence": 0.9615,
+      "correct": true
+    },
+    {
+      "id": "EE03",
+      "question": "What gas do plants absorb from the atmosphere during photosynthesis?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "carbon dioxide",
+      "model_answer": "WRONG_EE03",
+      "confidence": 0.99,
+      "correct": false
+    },
+    {
+      "id": "UA08",
+      "question": "When was the last time a human walked on Mars?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA08",
+      "confidence": 0.3648,
+      "correct": false
+    },
+    {
+      "id": "NE03",
+      "question": "How many legs does a spider have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "8",
+      "model_answer": "8",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NH01",
+      "question": "What is the atomic number of oxygen?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "8",
+      "model_answer": "8",
+      "confidence": 0.6692,
+      "correct": true
+    },
+    {
+      "id": "EE07",
+      "question": "What is the chemical symbol for water?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "H2O",
+      "model_answer": "H2O",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EE16",
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "William Shakespeare",
+      "model_answer": "William Shakespeare",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NH07",
+      "question": "In what year was the Declaration of Independence signed?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "1776",
+      "model_answer": "WRONG_NH07",
+      "confidence": 0.4784,
+      "correct": false
+    },
+    {
+      "id": "EH14",
+      "question": "Who is credited with inventing the first practical telephone?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Alexander Graham Bell",
+      "model_answer": "WRONG_EH14",
+      "confidence": 0.814,
+      "correct": false
+    },
+    {
+      "id": "NH09",
+      "question": "What is the approximate distance from Earth to the Sun in million kilometers?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "150",
+      "model_answer": "WRONG_NH09",
+      "confidence": 0.6255,
+      "correct": false
+    },
+    {
+      "id": "NE06",
+      "question": "How many keys does a standard piano have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "88",
+      "model_answer": "88",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NE07",
+      "question": "How many teeth does an adult human typically have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "32",
+      "model_answer": "32",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA02",
+      "question": "What is the capital city of Atlantis?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.5727,
+      "correct": true
+    },
+    {
+      "id": "EH15",
+      "question": "What mineral has the lowest hardness on the Mohs scale?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "talc",
+      "model_answer": "WRONG_EH15",
+      "confidence": 0.8435,
+      "correct": false
+    },
+    {
+      "id": "UA17",
+      "question": "What is the capital of Narnia?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA17",
+      "confidence": 0.0936,
+      "correct": false
+    },
+    {
+      "id": "NE10",
+      "question": "How many days are in a non-leap year?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "365",
+      "model_answer": "365",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "UA24",
+      "question": "What is the square root of a cloud?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA24",
+      "confidence": 0.3559,
+      "correct": false
+    },
+    {
+      "id": "NH06",
+      "question": "What is the approximate depth of the Mariana Trench in meters?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "11000",
+      "model_answer": "WRONG_NH06",
+      "confidence": 0.6297,
+      "correct": false
+    },
+    {
+      "id": "UA09",
+      "question": "What is the name of the dragon living in Loch Ness?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA09",
+      "confidence": 0.3858,
+      "correct": false
+    },
+    {
+      "id": "EE13",
+      "question": "What is the largest desert in the world?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "Antarctic Desert",
+      "model_answer": "Antarctic Desert",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NE11",
+      "question": "How many legs does an insect have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "6",
+      "model_answer": "6",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EH04",
+      "question": "What is the rarest naturally occurring element in the Earth's crust?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "astatine",
+      "model_answer": "WRONG_EH04",
+      "confidence": 0.4438,
+      "correct": false
+    },
+    {
+      "id": "EH01",
+      "question": "What is the chemical symbol for tungsten?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "W",
+      "model_answer": "W",
+      "confidence": 0.7628,
+      "correct": true
+    },
+    {
+      "id": "NE01",
+      "question": "How many continents are there on Earth?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "7",
+      "model_answer": "WRONG_NE01",
+      "confidence": 0.99,
+      "correct": false
+    },
+    {
+      "id": "UA21",
+      "question": "What is the exact number of atoms in the universe?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA21",
+      "confidence": 0.6549,
+      "correct": false
+    },
+    {
+      "id": "EH10",
+      "question": "What is the SI unit of electrical resistance?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "ohm",
+      "model_answer": "ohm",
+      "confidence": 0.4345,
+      "correct": true
+    },
+    {
+      "id": "UA19",
+      "question": "What is the social security number of Albert Einstein?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.2881,
+      "correct": true
+    },
+    {
+      "id": "EH06",
+      "question": "What is the capital of Bhutan?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "Thimphu",
+      "model_answer": "WRONG_EH06",
+      "confidence": 0.3779,
+      "correct": false
+    },
+    {
+      "id": "NH10",
+      "question": "What is the atomic number of uranium?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "92",
+      "model_answer": "WRONG_NH10",
+      "confidence": 0.86,
+      "correct": false
+    },
+    {
+      "id": "UA11",
+      "question": "Who is the current King of the United States?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.4431,
+      "correct": true
+    },
+    {
+      "id": "UA01",
+      "question": "When did the United States land on the Sun?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.7372,
+      "correct": true
+    },
+    {
+      "id": "NH14",
+      "question": "What is the approximate number of muscles in the human body?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "600",
+      "model_answer": "WRONG_NH14",
+      "confidence": 0.6593,
+      "correct": false
+    },
+    {
+      "id": "NH12",
+      "question": "What is the melting point of iron in degrees Celsius (approximate)?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "1538",
+      "model_answer": "WRONG_NH12",
+      "confidence": 0.5383,
+      "correct": false
+    },
+    {
+      "id": "UA15",
+      "question": "What is the weight of an idea?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA15",
+      "confidence": 0.4981,
+      "correct": false
+    },
+    {
+      "id": "UA22",
+      "question": "Who will be the last human born?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "CONFIDENT_WRONG_UA22",
+      "confidence": 0.4892,
+      "correct": false
+    },
+    {
+      "id": "NE05",
+      "question": "How many strings does a standard guitar have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "6",
+      "model_answer": "6",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "EH07",
+      "question": "What enzyme unwinds DNA during replication?",
+      "category": "entity",
+      "difficulty": "hard",
+      "ground_truth": "helicase",
+      "model_answer": "helicase",
+      "confidence": 0.4624,
+      "correct": true
+    },
+    {
+      "id": "UA12",
+      "question": "What is the boiling point of the letter 'A'?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.4813,
+      "correct": true
+    },
+    {
+      "id": "NE12",
+      "question": "How many senses are traditionally recognized in humans?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "5",
+      "model_answer": "5",
+      "confidence": 0.965,
+      "correct": true
+    },
+    {
+      "id": "UA06",
+      "question": "How many horns does a triceratops have on its tail?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.38,
+      "correct": true
+    },
+    {
+      "id": "NE14",
+      "question": "How many bones are in the adult human body (approximate count)?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "206",
+      "model_answer": "206",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NH02",
+      "question": "What is the atomic number of gold?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "79",
+      "model_answer": "WRONG_NH02",
+      "confidence": 0.7214,
+      "correct": false
+    },
+    {
+      "id": "NH13",
+      "question": "How many planets in our solar system have rings?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "4",
+      "model_answer": "4",
+      "confidence": 0.6666,
+      "correct": true
+    },
+    {
+      "id": "NH16",
+      "question": "What is the atomic number of iron?",
+      "category": "numerical",
+      "difficulty": "hard",
+      "ground_truth": "26",
+      "model_answer": "WRONG_NH16",
+      "confidence": 0.5856,
+      "correct": false
+    },
+    {
+      "id": "EE04",
+      "question": "What is the hardest natural mineral on the Mohs scale?",
+      "category": "entity",
+      "difficulty": "easy",
+      "ground_truth": "diamond",
+      "model_answer": "WRONG_EE04",
+      "confidence": 0.99,
+      "correct": false
+    },
+    {
+      "id": "NE04",
+      "question": "How many colors are in a rainbow?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "7",
+      "model_answer": "7",
+      "confidence": 0.99,
+      "correct": true
+    },
+    {
+      "id": "NE15",
+      "question": "How many faces does a cube have?",
+      "category": "numerical",
+      "difficulty": "easy",
+      "ground_truth": "6",
+      "model_answer": "6",
+      "confidence": 0.811,
+      "correct": true
+    },
+    {
+      "id": "UA18",
+      "question": "When did the Moon produce its last volcanic eruption (in recorded history)?",
+      "category": "unanswerable",
+      "difficulty": "easy",
+      "ground_truth": "UNANSWERABLE",
+      "model_answer": "UNANSWERABLE",
+      "confidence": 0.5051,
+      "correct": true
+    }
+  ]
+}

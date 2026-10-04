@@ -1,0 +1,3 @@
+# MetaBoundary — zero external dependencies
+# All metrics (Brier score, ECE, AUROC) computed from scratch.
+# Requires Python 3.8+

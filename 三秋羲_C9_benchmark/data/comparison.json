@@ -1,0 +1,42 @@
+[
+  {
+    "model": "perfect",
+    "accuracy": 1.0,
+    "brier": 0.0001,
+    "ece": 0.01,
+    "auroc": null,
+    "metascore": 0.997
+  },
+  {
+    "model": "well_calibrated",
+    "accuracy": 0.8295,
+    "brier": 0.157882,
+    "ece": 0.124095,
+    "auroc": 0.678539,
+    "metascore": 0.8032
+  },
+  {
+    "model": "overconfident",
+    "accuracy": 0.625,
+    "brier": 0.229438,
+    "ece": 0.185474,
+    "auroc": 0.672727,
+    "metascore": 0.7544
+  },
+  {
+    "model": "underconfident",
+    "accuracy": 0.8295,
+    "brier": 0.25922,
+    "ece": 0.328342,
+    "auroc": 0.645205,
+    "metascore": 0.6914
+  },
+  {
+    "model": "random",
+    "accuracy": 0.4886,
+    "brier": 0.40791,
+    "ece": 0.381158,
+    "auroc": 0.384496,
+    "metascore": 0.5378
+  }
+]

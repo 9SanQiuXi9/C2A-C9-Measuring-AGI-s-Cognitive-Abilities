@@ -1,0 +1,41 @@
+============================================================
+MetaBoundary Evaluation Results
+============================================================
+Total questions:  88
+Correct:          73
+Accuracy:         0.8295
+Brier Score:      0.157882  (lower = better, 0 = perfect)
+ECE:              0.124095  (lower = better, 0 = perfect)
+AUROC:            0.678539
+MetaScore:        0.8032  (higher = better, 1 = perfect)
+
+------------------------------------------------------------
+Breakdown by Category
+------------------------------------------------------------
+  entity                n= 32  acc=0.7812  brier=0.209842  conf=0.7267
+  numerical             n= 32  acc=0.7500  brier=0.206125  conf=0.6792
+  unanswerable          n= 24  acc=1.0000  brier=0.024277  conf=0.8635
+
+------------------------------------------------------------
+Breakdown by Difficulty
+------------------------------------------------------------
+  easy        n= 56  acc=0.9286  brier=0.075213  conf=0.8638
+  hard        n= 32  acc=0.6562  brier=0.302552  conf=0.5417
+
+------------------------------------------------------------
+Selective Coverage
+------------------------------------------------------------
+  threshold=0.0  coverage=1.0000  accuracy=0.8295
+  threshold=0.1  coverage=1.0000  accuracy=0.8295
+  threshold=0.2  coverage=1.0000  accuracy=0.8295
+  threshold=0.3  coverage=0.9886  accuracy=0.8276
+  threshold=0.4  coverage=0.9432  accuracy=0.8193
+  threshold=0.5  coverage=0.8523  accuracy=0.8267
+  threshold=0.6  coverage=0.7386  accuracy=0.8615
+  threshold=0.7  coverage=0.6818  accuracy=0.8833
+  threshold=0.8  coverage=0.5227  accuracy=0.9348
+  threshold=0.9  coverage=0.2386  accuracy=1.0000
+  threshold=1.0  coverage=0.0000  accuracy=0.0000
+============================================================
+
+Elapsed: 0.001s

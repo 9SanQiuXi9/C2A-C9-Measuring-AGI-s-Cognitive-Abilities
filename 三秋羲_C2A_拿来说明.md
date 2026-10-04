@@ -1,0 +1,108 @@
+# C2A 拿来说明 — MetaBoundary 提案
+
+## 参考的已有 Benchmark 与文献
+
+### 1. SQuAD 2.0 (Rajpurkar et al., 2018)
+
+**拿了什么：**
+- 不可回答问题的设计范式。SQuAD 2.0 首次大规模引入"无法从上下文中回答的问题"，要求模型识别并弃权。MetaBoundary 借鉴了这一设计，将不可回答问题扩展到 7 种子类型。
+
+**改了什么：**
+- SQuAD 2.0 是阅读理解任务（给定上下文），MetaBoundary 是开放域问答（无上下文）。
+- SQuAD 2.0 只衡量准确率，MetaBoundary 增加了置信度校准指标。
+
+**取舍理由：**
+- SQuAD 2.0 的不可回答问题设计已被广泛验证，构念效度有保证。但 SQuAD 2.0 不测量元认知校准，这正是 MetaBoundary 的核心目标。
+
+---
+
+### 2. Guo et al. (2017) — On Calibration of Modern Neural Networks
+
+**拿了什么：**
+- ECE（Expected Calibration Error）的数学定义和分箱计算方法。MetaBoundary 的 ECE 实现直接基于此论文，使用 15 个等宽分箱。
+
+**改了什么：**
+- Guo 2017 关注图像分类模型的校准，MetaBoundary 将其应用于 LLM 的开放域问答。
+- Guo 2017 使用 temperature scaling 改善校准，MetaBoundary 不干预模型，只测量原始校准。
+
+**取舍理由：**
+- ECE 是校准研究的标准指标，引用此论文确保方法学基础扎实。15 分箱是 Guo 2017 的推荐设置。
+
+---
+
+### 3. Brier (1950) — Verification of Forecasts Expressed in Probability
+
+**拿了什么：**
+- Brier Score 的数学定义：概率预测与实际结果之间的均方误差。这是概率预测校准的经典指标。
+
+**改了什么：**
+- 无。Brier Score 是通用指标，直接应用。
+
+**取舍理由：**
+- Brier Score 相比 ECE 的优势：不需要分箱参数，对极端置信度（0.99、0.01）敏感。两者互补使用。
+
+---
+
+### 4. Kadavath et al. (2022) — Training Language Models to Self-Evaluate (Anthropic)
+
+**拿了什么：**
+- LLM 自我评估的评估范式：让模型在回答后给出置信度评分。MetaBoundary 的置信度采集方式（0–1 连续值）借鉴了此工作。
+
+**改了什么：**
+- Kadavath 2022 通过 RLHF 训练模型改善自我评估，MetaBoundary 不训练模型，只测量原始能力。
+- Kadavath 2022 使用选择题，MetaBoundary 使用开放域问答。
+
+**取舍理由：**
+- Kadavath 2022 证明了 LLM 自我评估的可行性，为 MetaBoundary 的置信度采集提供了方法论基础。
+
+---
+
+### 5. ARC (Chollet, 2019) — On the Measure of Intelligence
+
+**拿了什么：**
+- 程序化生成测试实例的设计思想。ARC 通过随机生成视觉网格变换来排除记忆污染。MetaBoundary 借鉴了"排除记忆"的设计理念——通过不可回答问题来测试模型是否知道知识边界，而非是否记得答案。
+
+**改了什么：**
+- ARC 是视觉任务，MetaBoundary 是文本任务。
+- ARC 测量抽象推理，MetaBoundary 测量元认知校准。
+
+**取舍理由：**
+- ARC 的核心洞察——"测试应从训练数据中排除"——是 benchmark 设计的基本原则。
+
+---
+
+### 6. DeepMind (2026) — Measuring Progress Toward AGI: A Cognitive Framework
+
+**拿了什么：**
+- 元认知的三层分类（§7.7）：
+  1. 一阶：任务表现（准确率）
+  2. 二阶：对表现的置信度判断（校准）
+  3. 三阶：元认知知识的策略性使用（选择性弃权）
+- MetaBoundary 的指标设计严格对齐这三层：
+  - Accuracy → 一阶
+  - Brier + ECE + AUROC → 二阶
+  - Selective Coverage → 三阶
+
+**改了什么：**
+- DeepMind 框架是理论性的，MetaBoundary 提案将其操作化为可执行的评估流程。
+
+---
+
+## 未参考但有交集的工作
+
+| 工作 | 交集 | 未参考原因 |
+|------|------|-----------|
+| SelfAware (Kadavath et al., 2022) | 不可回答问题 + 自我评估 | 与 Kadavath 2022 高度重叠 |
+| Natural Questions (Kwiatkowski et al., 2019) | 开放域问答数据集 | 需要外部数据集，不符合零依赖原则 |
+| MMLU (Hendrycks et al., 2021) | 多领域知识测试 | 不测量置信度校准 |
+| BIG-Bench (Srivastava et al., 2022) | 大规模多任务评估 | 规模过大，不适合本课程项目 |
+
+---
+
+## 拿来主义原则的遵守
+
+本项目严格遵守"拿来主义"原则：
+1. **所有指标（Brier、ECE、AUROC）均为已有文献的标准指标**，未发明新指标
+2. **不可回答问题的设计范式来自 SQuAD 2.0**，扩展了子类型
+3. **三层元认知分类来自 DeepMind 框架**，操作化为可执行指标
+4. **创新点在于组合与操作化**：将已有指标和范式组合为完整的元认知评估流程，而非从零设计
